@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/style.css' %}">
+	<title>Money Scheduler</title>
+</head>
+
+<body>
+	<nav class="navbar bg-body-tertiary navcolor">
+		<div class="container-fluid">
+			<a href="/" class="navbar-brand title text-success text-me-one" >Money Scheduler</a>
+		</div>
+	</nav>
+	{% block content %}
+	{% endblock %}
+</body>
+
+</html>

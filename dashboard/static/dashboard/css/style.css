@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+body {
+	background-color: rgb(228, 255, 250);
+}
+
+.navcolor {
+	background-color: rgb(238, 255, 241);
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+	font-size: 2em;
+}
+
+.text-me-one {
+	font-family: "Text Me One", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+main {
+	padding: 20px 5%;
+}
+
+.card-scale {
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+	margin: 20px 0px;
+}
+
+.main-contents {
+	display: flex;
+	align-items: center;
+}
+
+.price {
+	margin: 0 0 0 auto;
+} 
+
+a {
+	text-decoration: none;
+}
+
+.card-menu {
+	color: black;
+}
+

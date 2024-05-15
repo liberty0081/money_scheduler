@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+	<main class="outcome-list">
+		{% for outcome in outcomes %}
+		<div class="card card-scale">
+			<div class="card-body">
+				<div class="main-contents">
+					<h1 class="card-title mx-3 text-me-one">{{outcome.date | date:"m/d"}}</h1>
+					<div>
+						<h5 class="card-title">{{outcome.title}}</h5>
+						<p class="card-text">{{outcome.note}}</p>
+						<div class="d-flex">
+							<form method="post" action="{% url 'dashboard:update' outcome.id%}">{% csrf_token %}
+								<button type="submit" class="card-menu btn btn-outline-secondary me-3">編集する</button>
+							</form>
+							<form method="post" action="{% url 'dashboard:outcome_delete' outcome.id%}">{% csrf_token %}
+								<button type="submit" class="card-menu btn btn-outline-danger">削除する</button>
+							</form>
+						</div>
+					</div>
+					<div class="price">
+						<h1 class="card-title text-me-one">&yen;{{outcome.price}}</h6>
+					</div>
+				</div>			
+			</div>
+		</div>
+		{% endfor %}
+		<div class="d-flex justify-content-center align-items-end">
+			<a href="/form" class="btn btn-success btn-lg d-inline-flex align-items-center">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-plus"
+					viewBox="0 0 16 16">
+					<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+				</svg>
+				追加
+			</a>
+		</div>
+	</main>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+{% endblock %}
